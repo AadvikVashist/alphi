@@ -1,13 +1,8 @@
 'use client';
 
 import {
-  // LayoutDashboard,
-  Users,
-  Mail,
+  LayoutDashboard,
   X,
-  Sparkles,
-  MailCheck,
-  Brain,
 } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
@@ -60,48 +55,21 @@ function NavItem({ href, icon, label, active, badge, onClick }: NavItemProps) {
 interface SidebarProps {
   isMobileNavOpen: boolean;
   setIsMobileNavOpen: (value: boolean) => void;
-  unreadEmails?: number;
 }
 
 export function Sidebar({
   isMobileNavOpen,
   setIsMobileNavOpen,
-  unreadEmails = 24,
 }: SidebarProps) {
   const pathname = usePathname();
 
   const navItems = [
-    // {
-    //   label: 'Dashboard',
-    //   href: '/dashboard',
-    //   icon: <LayoutDashboard className="h-5 w-5" />,
-    // },
     {
-      label: 'Memories',
-      href: '/memories',
-      icon: <Brain className="h-5 w-5" />,
-    },  
-    {
-      label: 'Emails',
-      href: '/emails',
-      icon: <Mail className="h-5 w-5" />,
-      badge: unreadEmails,
+      label: 'Dashboard',
+      href: '/dashboard',
+      icon: <LayoutDashboard className="h-5 w-5" />,
     },
-    {
-      label: 'Creator Roster',
-      href: '/creators',
-      icon: <Users className="h-5 w-5" />,
-    },
-    {
-      label: 'AI Settings',
-      href: '/ai-settings',
-      icon: <Sparkles className="h-5 w-5" />,
-    },
-    {
-      label: 'Email Templates',
-      href: '/email-templates',
-      icon: <MailCheck className="h-5 w-5" />,
-    }
+
   ];
 
   return (
@@ -113,22 +81,22 @@ export function Sidebar({
           <Link href="/" className="flex items-center gap-2">
             <div className="rounded-md p-1 flex-shrink-0">
               <Image
-                src="/logo.webp"
-                alt="Lunar Copilot"
+                src="/logo.png"
+                alt="Alphi Copilot"
                 width={32}
                 height={32}
                 className="hidden dark:block"
               />
               <Image
-                src="/logo-dark.webp"
-                alt="Lunar Copilot"
+                src="/logo-dark.png"
+                alt="Alphi Copilot"
                 width={32}
                 height={32}
                 className="block dark:hidden"
               />
             </div>
             <span className="font-nothing text-xl font-bold">
-              Lunar
+              Alphi
             </span>
           </Link>
         </div>
@@ -173,22 +141,22 @@ export function Sidebar({
                 <Link href="/" className="flex items-center gap-2">
                   <div className="rounded-md p-1 flex-shrink-0">
                     <Image
-                      src="/logo.webp"
-                      alt="Lunar Copilot"
+                      src="/logo.png"
+                      alt="Alphi Copilot"
                       width={32}
                       height={32}
                       className="hidden dark:block"
                     />
                     <Image
-                      src="/logo-dark.webp"
-                      alt="Lunar Copilot"
+                      src="/logo-dark.png"
+                      alt="Alphi Copilot"
                       width={32}
                       height={32}
                       className="block dark:hidden"
                     />
                   </div>
                   <span className="font-nothing text-xl font-bold">
-                    Lunar Copilot
+                    Alphi Copilot
                   </span>
                 </Link>
                 <Button

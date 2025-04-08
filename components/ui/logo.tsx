@@ -19,7 +19,7 @@ export function Logo({ className, size = "md" }: LogoProps) {
     <div className={cn("relative", sizeMap[size], className)}>
       <Image
         src="/logo.svg"
-        alt="Lunar Logo"
+        alt="Alphi Logo"
         fill
         className="object-contain"
       />

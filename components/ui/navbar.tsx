@@ -146,9 +146,9 @@ export const Navbar = () => {
               className="flex justify-center items-center flex-row gap-2"
             >
               
-              <Image src="/logo.webp" alt="Lunar Copilot" width={32} height={32} className="hidden dark:block" />
-              <Image src="/logo-dark.webp" alt="Lunar Copilot" width={32} height={32} className="dark:hidden" />
-              <h1 className="text-2xl font-semibold text-foreground">Lunar Copilot</h1>
+              <Image src="/logo.png" alt="Alphi Copilot" width={32} height={32} className="hidden dark:block" />
+              <Image src="/logo-dark.png" alt="Alphi Copilot" width={32} height={32} className="dark:hidden" />
+              <h1 className="text-2xl font-semibold text-foreground">Alphi Copilot</h1>
             </motion.div>
           </Link>
 

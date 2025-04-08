@@ -1,18 +1,19 @@
 "use client";
 
-import { CreditCard, HelpCircle, LogOut, Settings, User, UserIcon,AreaChart, MessageSquareText } from 'lucide-react';
+import { CreditCard, HelpCircle, LogOut, Settings, User, UserIcon, AreaChart, MessageSquareText } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState, useCallback } from 'react';
 import Image from 'next/image';
 import {
-
+  DropdownMenu,
+  DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
+  DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
-import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from '@radix-ui/react-dropdown-menu';
 
 interface UserData {
   email: string | undefined;
@@ -113,6 +114,7 @@ export function UserDropdown({ variant = 'header' }: UserDropdownProps) {
           variant="outline"
           size="icon"
           className="rounded-lg"
+          type="button"
         >
           <UserIcon className="size-5" />
         </Button>
@@ -120,7 +122,10 @@ export function UserDropdown({ variant = 'header' }: UserDropdownProps) {
     }
 
     return (
-      <button className="flex items-center gap-3 pl-4 border-l border-muted outline-none">
+      <button 
+        type="button"
+        className="flex items-center gap-3 pl-4 border-l border-muted outline-none hover:bg-accent/50 rounded-sm px-2 py-1 transition-colors"
+      >
         <div className="size-8 rounded-full bg-gradient-to-br from-muted to-muted/70 flex items-center justify-center text-sm font-medium text-foreground">
           {userData.avatarUrl ? (
             <Image
@@ -151,7 +156,7 @@ export function UserDropdown({ variant = 'header' }: UserDropdownProps) {
       <DropdownMenuTrigger asChild>
         {renderTrigger()}
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56" align="end" forceMount>
+      <DropdownMenuContent className="w-56 bg-popover" align="end" forceMount>
         <DropdownMenuLabel className="font-normal">
           <div className="flex flex-col space-y-1">
             <p className="text-sm font-medium leading-none">{userData.fullName}</p>
