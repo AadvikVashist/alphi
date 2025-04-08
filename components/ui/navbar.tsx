@@ -9,7 +9,6 @@ import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { UserDropdown } from '@/components/ui/user-dropdown';
 import { cn } from '@/lib/utils';
-import { createClient } from '@/utils/supabase/client';
 
 import Image from 'next/image';
 
@@ -18,7 +17,6 @@ export const Navbar = () => {
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const supabase = createClient();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,24 +26,6 @@ export const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  useEffect(() => {
-    const getUser = async () => {
-      const { data: { user } } = await supabase.auth.getUser();
-      setIsLoggedIn(!!user);
-    };
-
-    getUser();
-
-    // Fixed function call with proper types
-    const { data } = supabase.auth.onAuthStateChange(() => {
-      getUser(); // Simply call getUser again when auth state changes
-    });
-
-    return () => {
-      data.subscription.unsubscribe();
-    };
-  }, [supabase.auth]);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -146,8 +126,8 @@ export const Navbar = () => {
               className="flex justify-center items-center flex-row gap-2"
             >
               
-              <Image src="/logo.png" alt="Alphi Copilot" width={32} height={32} className="hidden dark:block" />
-              <Image src="/logo-dark.png" alt="Alphi Copilot" width={32} height={32} className="dark:hidden" />
+              <Image src="/logo.png" alt="Alphi Copilot" width={22} height={22} className="hidden dark:block" />
+              <Image src="/logo-dark.png" alt="Alphi Copilot" width={22} height={22} className="dark:hidden" />
               <h1 className="text-2xl font-semibold text-foreground">Alphi Copilot</h1>
             </motion.div>
           </Link>

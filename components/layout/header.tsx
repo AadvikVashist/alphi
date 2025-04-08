@@ -51,8 +51,8 @@ export function Header({
           </Button>
           <Link href="/" className="flex items-center gap-2">
             <div className="rounded-md p-1 flex-shrink-0">
-              <Image src="/logo.png" alt="Alphi Copilot" width={32} height={32} className="hidden dark:block" />
-              <Image src="/logo-dark.png" alt="Alphi Copilot" width={32} height={32} className="block dark:hidden" />
+              <Image src="/logo.png" alt="Alphi Copilot" width={22} height={22} className="hidden dark:block" />
+              <Image src="/logo-dark.png" alt="Alphi Copilot" width={22} height={22} className="block dark:hidden" />
             </div>
             <span className="font-nothing text-xl font-bold">Alphi</span>
           </Link>
