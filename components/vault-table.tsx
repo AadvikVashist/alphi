@@ -1,6 +1,7 @@
 import { Avatar } from "@/components/ui/avatar"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { MoreHorizontal } from "lucide-react"
+import { IconCoinBitcoinFilled, IconCash, IconCurrencyEthereum } from "@tabler/icons-react"
 
 const vaults = [
   {
@@ -59,7 +60,13 @@ export function VaultTable() {
             <TableCell className="font-medium">
               <div className="flex items-center gap-2">
                 <Avatar className="h-6 w-6">
-                  <img src={`/placeholder.svg?height=24&width=24`} alt={vault.name} />
+                  {vault.symbol === "BTC" ? (
+                    <IconCoinBitcoinFilled className="h-4 w-4" />
+                  ) : vault.symbol === "USDT" ? (
+                    <IconCash className="h-4 w-4" />
+                  ) : (
+                    <IconCurrencyEthereum className="h-4 w-4" />
+                  )}
                 </Avatar>
                 <div>
                   <div className="font-medium">{vault.name}</div>

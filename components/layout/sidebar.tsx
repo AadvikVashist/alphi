@@ -3,6 +3,8 @@
 import {
   LayoutDashboard,
   X,
+  Brain,
+  Settings,
 } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
@@ -69,6 +71,16 @@ export function Sidebar({
       href: '/dashboard',
       icon: <LayoutDashboard className="h-5 w-5" />,
     },
+    { label: 'Alphi Copilot',
+      href: '/alphi-copilot',
+      icon: <Brain className="h-5 w-5" />,
+    },
+    {
+      label: 'Settings',
+      href: '/settings',
+      icon: <Settings className="h-5 w-5" />,
+    },
+
 
   ];
 

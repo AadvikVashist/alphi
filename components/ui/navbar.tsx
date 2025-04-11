@@ -103,7 +103,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <div className="relative w-full h-24"/>
+      <div className="relative w-full h-24 bg-background"/>
       <motion.nav
         initial={{ y: -110, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
